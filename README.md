@@ -22,9 +22,19 @@ Therefore, masks of some speech bubble were created with edge detector and addit
  
 `Model`
 + Base Network : Unet
-+ Encoder : resnet34,efficientnet-b0,mobilenet_v2
++ Encoder : mobilenet_v2
 + Pretrained : imagenet
-+ Sample
+
+
++ <details>
+    <summary>Compare Encoder</summary>
+    <div markdown="1">
+    
+    + `Encoder`
+        + resnet34
+        + efficientnet-b0
+        + mobilenet_V2
+           
     + <details>
         <summary>sample 1</summary>
         <div markdown="1">
@@ -165,7 +175,8 @@ Therefore, masks of some speech bubble were created with edge detector and addit
       </details> 
 
 
-
+    </div>
+  </details>
   
   
   
