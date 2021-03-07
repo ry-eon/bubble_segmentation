@@ -177,9 +177,14 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
     </div>
   </details>
-  
-  
-  
+
+
+`Improvement Points`
++ **Models perform poorly when finding undefined shapes of speech bubble.**
++ **Models perform poorly when looking for high-transparency speech bubble.**
++ **Models perform poorly when the internal letters of speech bubbles are distorted.**
+
+### Therefore, I solve this problem through data augmentation.  
   
   
   
