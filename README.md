@@ -26,8 +26,8 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 + Pretrained : imagenet
 + Sample
     + <details>
-      <summary>sample 1</summary>
-      <div markdown="1">
+        <summary>sample 1</summary>
+        <div markdown="1">
   
        |Encoder| Sample|
        |----|----|
@@ -35,13 +35,13 @@ Therefore, masks of some speech bubble were created with edge detector and addit
        |efficientnet-b0|![check_eff_epoch9 png_0](https://user-images.githubusercontent.com/61634628/108944237-b1364900-769d-11eb-9b0e-af07c287b61e.png)|
        |mobilenet_v2|![check_mob_epoch8 png_0](https://user-images.githubusercontent.com/61634628/110071164-e9850800-7dbe-11eb-938a-cbe369a71939.png)|
   
-      </div>
+        </div>
       </details>
 
 
-    + <details>
-      <summary>sample 2</summary>
-      <div markdown="1">
+      <details>
+        <summary>sample 2</summary>
+        <div markdown="1">
   
       |Encoder| Sample|
       |----|----|
@@ -49,7 +49,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
       |efficientnet-b0|![check_eff_epoch9 png_1](https://user-images.githubusercontent.com/61634628/108944337-e0e55100-769d-11eb-8707-36926aeaee82.png)|
       |mobilenet_v2|![check_mob_epoch8 png_1](https://user-images.githubusercontent.com/61634628/110071234-03bee600-7dbf-11eb-81ad-5780829c87c6.png)|
   
-      </div>
+        </div>
       </details> 
   
 
