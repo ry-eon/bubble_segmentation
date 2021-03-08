@@ -232,6 +232,9 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 <br>
 
 ## Train 
++ **1. Download weight** 
+
++ **2. Train**     
     ~~~
     python train.py -g gpu_id -dir 'data_dir' -pretrained 'pretrained_model.pth'
     ~~~
