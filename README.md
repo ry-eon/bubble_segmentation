@@ -18,6 +18,8 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 + Form : Basic, Double Speech bubble, Multi-External, Scatter-type
 + ![image](https://user-images.githubusercontent.com/61634628/106093155-1700e500-6173-11eb-9a5e-8828c45271c4.png)
  
+<br> 
+ 
 ## Initial segmentation
  
 `Model`
