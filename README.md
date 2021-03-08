@@ -177,14 +177,15 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
     </div>
   </details>
-+ **The comparison of the three ecoders showed similar performance. Therefore, we chose mobilenet_v2 with the fewest parameters.**
+
+**The comparison of the three ecoders showed similar performance. Therefore, we chose mobilenet_v2 with the fewest parameters.**
 
 `Improvement Points`
 + Models perform poorly when finding undefined shapes of speech bubble.
 + Models perform poorly when looking for high-transparency speech bubble.
 + Models perform poorly when the internal letters of speech bubbles are distorted.
 
-**Therefore, I solve this problem through data augmentation.  **
+**Therefore, I solve this problem through data augmentation.**
   
 <br>
   
