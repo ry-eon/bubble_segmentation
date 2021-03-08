@@ -214,7 +214,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
 + **Install Dependencies Code**
     ~~~
-    pip install segmentation_models_pytorch opencv-python albumentations pillow numpy  
+    pip install opencv-python albumentations pillow numpy pretrainedmodels scikit-image scipy segmentation-models-pytorch efficientnet-pytorch timm
     ~~~
     or
     ~~~
