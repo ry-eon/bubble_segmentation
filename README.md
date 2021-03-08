@@ -195,3 +195,36 @@ Therefore, masks of some speech bubble were created with edge detector and addit
  ## data augmentation 
  
  ![스크린샷 2021-03-05 오후 6 25 50](https://user-images.githubusercontent.com/61634628/110106579-31228880-7ded-11eb-8949-fc8d8cbfadb7.png)
+ 
+ `augmentation` 
+ + Copy to Simple Random Location
+ + Copy to Transparent Random Location
+ + Copy to Color Random Location
+ + Copy to Color + Transparent Random Location
+ 
+ ### Install dependencies
+
++ **Pytorch Version** 
+    + Pytorch 1.7.0 higher
+
++ **Install Dependencies Code**
+    ~~~
+    pip install segmentation_models_pytorch opencv-python albumentations pillow numpy  
+    ~~~
+    or
+    ~~~
+    pip install -r requirements.txt
+    ~~~
+<br>
+
+### Pretrained model 
+
+|**Model**|**Link**|
+|---------|--------|
+|Mobilenet_v2|[Link]|
+|Mobilenet_v2 + Simple Random Location|[Link]|
+|Mobilenet_v2 + Transparent Random Location|[Link]|
+|Mobilenet_v2 + Color Random Location|[Link]|
+|Mobilenet_v2 + Color + Transparent Random Location|[Link]|
+
+<br>
