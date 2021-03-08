@@ -202,7 +202,9 @@ Therefore, masks of some speech bubble were created with edge detector and addit
  + Copy to Color Random Location
  + Copy to Color + Transparent Random Location
  
- ### Install dependencies
+ <br>
+ 
+ ## Install dependencies
 
 + **Pytorch Version** 
     + Pytorch 1.7.0 higher
@@ -217,7 +219,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     ~~~
 <br>
 
-### Pretrained model 
+## Pretrained model 
 
 |**Model**|**Link**|
 |---------|--------|
@@ -228,3 +230,20 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 |Mobilenet_v2 + Color + Transparent Random Location|[Link]|
 
 <br>
+
+## Train 
+    ~~~
+    python train.py -g gpu_id -dir 'data_dir' -pretrained 'pretrained_model.pth'
+    ~~~
+    or
+    ~~~
+    Train.sh 
+    ~~~
+
+### Demo    
+ 
++ **1. Download weight**        
++ **2. Demo**
+    ~~~
+    python demp.py --weightfile pretrained_model.pth -imgfile image_dir 
+    ~~~
