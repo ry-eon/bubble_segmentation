@@ -221,8 +221,8 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
 |**Model**|**Link**|
 |---------|--------|
-|Mobilenet_v2|[Link]|
-|Mobilenet_v2 + Simple Random Location|[Link]|
+|Mobilenet_v2|[Link](https://drive.google.com/file/d/1kClr7Omvb-REM4r-CrLcjItny7-Zay6p/view?usp=sharing)|
+|Mobilenet_v2 + Simple Random Location|[Link](https://drive.google.com/file/d/1Zcxd7H427Gkmv4QbiZCge5E68Of0IiU9/view?usp=sharing)|
 |Mobilenet_v2 + Transparent Random Location|[Link]|
 |Mobilenet_v2 + Color Random Location|[Link]|
 |Mobilenet_v2 + Color + Transparent Random Location|[Link]|
