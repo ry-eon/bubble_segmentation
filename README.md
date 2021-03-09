@@ -1,7 +1,5 @@
 # Bubble Segmentation
-~~~
-Note : It's not the final version code. I will the refine and update the code.
-~~~
+
 
 ## Overview 
 The model segmentates speech bubble within the cut. I have referenced and implemented [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch) to segment speech bubble.
