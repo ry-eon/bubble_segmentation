@@ -20,7 +20,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 + Pretrained : imagenet
 
 `Inference time`
-+ **Inference Images 
++ **Inference Images** 
     + `size` : 224 x 224
     + `sheets` : 25   
 + **CPU**
