@@ -20,11 +20,13 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 + Pretrained : imagenet
 
 `Inference time`
-+ **Standard Image size** : 224 x 224 
++ **Inference Images 
+    + `size` : 224 x 224
+    + `sheets` : 25   
 + **CPU**
-    + `mobilenet_V2` : 0.23343896865844727 sec
-    + `resnet34` : 0.31200408935546875 sec 
-    + `efficientnet-b0` : 0.32634687423706055 sec
+    + `mobilenet_V2` : 5.588375091552734 sec
+    + `resnet34` : 9.111860036849976 sec 
+    + `efficientnet-b0` : 7.837748050689697 sec
 + **CUDA**   
     + `mobilenet_V2` : sec
     + `resnet34` : sec 
@@ -201,12 +203,55 @@ Therefore, masks of some speech bubble were created with edge detector and addit
  `overview`
  <br>Use [trdg](https://github.com/Belval/TextRecognitionDataGenerator) to generate text data. In the case of trdg, when generating Korean image data, the data is generated one letter at a time. If you want to create a text image consisting of five Korean words, a total of five characters will be created, one by one. Therefore, I added the word in the Korean word dictionary as a txt file. Also, there is only one Korean font in trdg. Therefore, I added a font for Korean. The font is specified as random.
 
-그림 추가 예정
+![스크린샷 2021-03-11 오전 2 08 06](https://user-images.githubusercontent.com/61634628/110668469-b0112a00-820e-11eb-88ed-13062326abd7.png)
+
+
 
 `Argument`
 
++ **Directory**
+    + `--output_dir` : Specify the directory in which to store the generated data.
+    + `--input_file` : When set, this argument uses a specified text file as source for the text.
++ **Text Gerneration** 
+    + `--language` : The language to use, should be fr (French), en (English), es (Spanish), de (German), cn (Chinese), or hi (Hindi).
+    + `-c' : The number of images to be created.
+    + `-rs` : Use random sequences as the source text for the generation. Set '-let','-num','-sym' to use letters/numbers/symbols. If none specified, using all three.
+    + `-let` : Define if random sequences should contain letters. Only works with -rs
+    + `-num` : Define if random sequences should contain numbers. Only works with -rs
+    + `-sym` : Define if random sequences should contain symbols. Only works with -rs
+    + `-t` : Define the number of thread to use for image generation
+    + `-om` : Define if the generator will return masks for the text
++ **Data Format**
+    + `-w` : Define how many words should be included in each generated sample.
+    + `-r` : Define if the produced string will have variable word count (with --length being the maximum).
+    + `-f` : Define the height of the produced images if horizontal, else the width.
+    + `-e` : Define the extension to save the image with.
+    + `-wd`: Define the width of the resulting image. If not set it will be the width of the text + 10. If the width of the generated text is bigger that number will be used.
+    + `-al` : Define the alignment of the text in the image. Only used if the width parameter is set. 0: left, 1: center, 2: right.
+    + `-or` : Define the orientation of the text. 0: Horizontal, 1: Vertical.
+    + `-sw` : Define the width of the spaces between words. 2.0 means twice the normal space width.
+    + `-cs` : Define the width of the spaces between characters. 2 means two pixels.
+    + `-m` : Define the margins around the text when rendered. In pixels.
+    + `-fi` : Apply a tight crop around the rendered text.
+    + `-ca` : Generate upper or lowercase only. arguments: upper or lower. Example: --case upper if you use en.
+    + `-ws` : Split on words instead of on characters (preserves ligatures, no character spacing).
+    + `-stw` : Define the width of the strokes.
+    + `-im` : Define the image mode to be used. RGB is default, L means 8-bit grayscale images, 1 means 1-bit binary images stored with one pixel per byte, etc.
++ **Text Augmentation **
+    + `-k` : Define skewing angle of the generated text. In positive degrees.
+    + `-rk` : When set, the skew angle will be randomized between the value set with -k and it's opposite.
+    + `-bl` : Apply gaussian blur to the resulting sample. Should be an integer defining the blur radius.
+    + `-rbl` : When set, the blur radius will be randomized between 0 and -bl.
+    + `-b` : Define what kind of background to use. 0: Gaussian Noise, 1: Plain white, 2: Quasicrystal, 3: Image.
+    + `-na` : Define how the produced files will be named. 0: [TEXT]_[ID].[EXT], 1: [ID]_[TEXT].[EXT] 2: [ID].[EXT] + one file labels.txt containing id-to-label mappings.
+    + `-d` : Define a distorsion applied to the resulting image. 0: None (Default), 1: Sine wave, 2: Cosine wave, 3: Random.
+    + `-do` : Define the distorsion's orientation. Only used if -d is specified. 0: Vertical (Up and down), 1: Horizontal (Left and Right), 2: Both.
+    + `-tc` : Define the text's color, should be either a single hex color or a range in the ?,? format.
+    + `-id` : Define an image directory to use when background is set to image.
+    + `-stf` : Define the color of the contour of the strokes, if stroke_width is bigger than.
 
-
+    
+    
 
 
 
