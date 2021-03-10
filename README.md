@@ -8,7 +8,7 @@ In the previous task, the speech bubble detection was performed. In this task, a
 If you are curious about the bubble detection task, refer to the following [bubble detector](https://github.com/Little-BigMan/Bubble-Detector-YOLOv4).
 However, performance is limited when edge detector is used(ex: transparency, scatter-type, etc). 
 Therefore, masks of some speech bubble were created with edge detector and additional data were collected to create segmentation models.
-
+![result](https://user-images.githubusercontent.com/61634628/110697948-5c173d00-8230-11eb-8865-3433381d3c91.gif)
  
 <br> 
  
@@ -212,7 +212,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 + **Directory**
     + `--output_dir` : Specify the directory in which to store the generated data.
     + `--input_file` : When set, this argument uses a specified text file as source for the text.
-+ **Text Gerneration** 
++ **Text Generation** 
     + `--language` : The language to use, should be fr (French), en (English), es (Spanish), de (German), cn (Chinese), or hi (Hindi).
     + `-c' : The number of images to be created.
     + `-rs` : Use random sequences as the source text for the generation. Set '-let','-num','-sym' to use letters/numbers/symbols. If none specified, using all three.
@@ -237,7 +237,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     + `-ws` : Split on words instead of on characters (preserves ligatures, no character spacing).
     + `-stw` : Define the width of the strokes.
     + `-im` : Define the image mode to be used. RGB is default, L means 8-bit grayscale images, 1 means 1-bit binary images stored with one pixel per byte, etc.
-+ **Text Augmentation **
++ **Text Augmentation**
     + `-k` : Define skewing angle of the generated text. In positive degrees.
     + `-rk` : When set, the skew angle will be randomized between the value set with -k and it's opposite.
     + `-bl` : Apply gaussian blur to the resulting sample. Should be an integer defining the blur radius.
@@ -249,8 +249,19 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     + `-tc` : Define the text's color, should be either a single hex color or a range in the ?,? format.
     + `-id` : Define an image directory to use when background is set to image.
     + `-stf` : Define the color of the contour of the strokes, if stroke_width is bigger than.
++ **Mask Generation**
+    + `-save_dir` : Specify the directory in which to store the mask image.
+    + `-sn` : Define how the produced mask will be named.
+    + `-mt` : Defines how many images are used in a row.
+    + `-mw` : Define the width of the mask image.
+    + `-mh` : Define the height of the mask image.
+`Implement`
++ **Use the above argument to generate the data you want.**  
+   ~~~
+   python ./trdg/run.py -argument 
+   ~~~
 
-    
+  
     
 
 
@@ -277,7 +288,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
 + **Install Dependencies Code**
     ~~~
-    pip install opencv-python albumentations pillow numpy pretrainedmodels scikit-image scipy segmentation-models-pytorch efficientnet-pytorch timm
+    pip install torch torchvision albumentations numpy opencv-python pandas Pillow pretrainedmodels scipy segmentation-models-pytorch efficientnet-pytorch timm requests
     ~~~
     or
     ~~~
@@ -293,7 +304,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     |---------|--------|
     |Mobilenet_v2|[Link](https://drive.google.com/file/d/1kClr7Omvb-REM4r-CrLcjItny7-Zay6p/view?usp=sharing)|
     |Mobilenet_v2 + Simple Random Location|[Link](https://drive.google.com/file/d/1Zcxd7H427Gkmv4QbiZCge5E68Of0IiU9/view?usp=sharing)|
-    |Mobilenet_v2 + Transparent Random Location|[Link]|
+    |Mobilenet_v2 + Transparent Random Location|[Link](https://drive.google.com/file/d/1lxiOwGRJHKMnjMagbRDX3JPGX8nNm64M/view?usp=sharing)|
     |Mobilenet_v2 + Color Random Location|[Link]|
     |Mobilenet_v2 + Color + Transparent Random Location|[Link]|
 
@@ -320,13 +331,11 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
 
     + `Implement`     
+        + **Use the above argument to generate the data you want.** 
         ~~~
-        python train.py -g gpu_id -dir 'data_dir' -pretrained 'pretrained_model.pth'
+        python train.py -g gpu_id -dir 'data_dir' -pretrained 'pretrained_model.pth' ... 
         ~~~
-        or
-        ~~~
-        Train.sh 
-        ~~~
+
 
 ## Demo    
  
@@ -338,11 +347,9 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
 ## Result 
 
-|Model|Image|
+|MobileNet_v2|MobileNet_v2 + trans|
 |:---:|:---:|
-|MobileNet_v2|![train_model_mob7 pth](https://user-images.githubusercontent.com/61634628/110619106-c0a7ad00-81da-11eb-8dcb-bb11059311bd.png)|
-|MobileNet_v2 + gasi|![train_model_mob_gasi_7 pth](https://user-images.githubusercontent.com/61634628/110619068-b7b6db80-81da-11eb-8e6e-9b0b754511fc.png)|
-|MobileNet_v2 + trans|![train_model_mob_trans_4 pth](https://user-images.githubusercontent.com/61634628/110619099-be455300-81da-11eb-90d3-40aa3fd523bd.png)|
+|![train_model_mob7 pth](https://user-images.githubusercontent.com/61634628/110694235-b366de80-822b-11eb-9008-ff6105f70d44.png)|![train_model_mob_trans_4 pth](https://user-images.githubusercontent.com/61634628/110694209-aba73a00-822b-11eb-9a12-f7ae6dc3ffae.png)|
 
 
 
