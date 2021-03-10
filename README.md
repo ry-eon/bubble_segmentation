@@ -1,5 +1,6 @@
 # Bubble Segmentation
 
+ 
 
 ## Overview 
 The model segmentates speech bubble within the cut. I have referenced and implemented [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch) to segment speech bubble.
@@ -8,13 +9,6 @@ If you are curious about the bubble detection task, refer to the following [bubb
 However, performance is limited when edge detector is used(ex: transparency, scatter-type, etc). 
 Therefore, masks of some speech bubble were created with edge detector and additional data were collected to create segmentation models.
 
-## Bubble Speech Definition
-
-`Standard`
-+ Shape : Ellipse(tawon), Thorn(gasi), Sea_urchin(seonggye), Rectangle(sagak), Cloud(gurm)
-+ Color : Black/white(bw), Colorful(color), Transparency(tran), Gradation
-+ Form : Basic, Double Speech bubble, Multi-External, Scatter-type
-+ ![image](https://user-images.githubusercontent.com/61634628/106093155-1700e500-6173-11eb-9a5e-8828c45271c4.png)
  
 <br> 
  
@@ -190,10 +184,28 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 <br>
   
   
-  
+ ## data generation
+ 
+ `overview`
+ <br>Use [trdg](https://github.com/Belval/TextRecognitionDataGenerator) to generate text data. In the case of trdg, when generating Korean image data, the data is generated one letter at a time. If you want to create a text image consisting of five Korean words, a total of five characters will be created, one by one. Therefore, I added the word in the Korean word dictionary as a txt file. Also, there is only one Korean font in trdg. Therefore, I added a font for Korean. The font is specified as random.
+
+그림 추가 예정
+
+`Argument`
++ **--simple** : Simply attach the speech bubble to a random location inside the cut.
++ **--trans** : Attach the transparent speech bubble to a random location inside the cut.
++ **--color** : Attach the color speech bubble to a random location inside the cut.
++ **--trans_color** : Attach the color + transparent speech bubble to a random location inside the cut.
+
+
+
+
+
 
 
  ## data augmentation 
+ 
+ `overvew`
  
  ![스크린샷 2021-03-05 오후 6 25 50](https://user-images.githubusercontent.com/61634628/110106579-31228880-7ded-11eb-8949-fc8d8cbfadb7.png)
  
@@ -220,22 +232,26 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     ~~~
 <br>
 
-## Pretrained model 
-
-|**Model**|**Link**|
-|---------|--------|
-|Mobilenet_v2|[Link](https://drive.google.com/file/d/1kClr7Omvb-REM4r-CrLcjItny7-Zay6p/view?usp=sharing)|
-|Mobilenet_v2 + Simple Random Location|[Link](https://drive.google.com/file/d/1Zcxd7H427Gkmv4QbiZCge5E68Of0IiU9/view?usp=sharing)|
-|Mobilenet_v2 + Transparent Random Location|[Link]|
-|Mobilenet_v2 + Color Random Location|[Link]|
-|Mobilenet_v2 + Color + Transparent Random Location|[Link]|
-
-<br>
 
 ## Train 
 + **1. Download weight** 
 
+    |**Model**|**Link**|
+    |---------|--------|
+    |Mobilenet_v2|[Link](https://drive.google.com/file/d/1kClr7Omvb-REM4r-CrLcjItny7-Zay6p/view?usp=sharing)|
+    |Mobilenet_v2 + Simple Random Location|[Link](https://drive.google.com/file/d/1Zcxd7H427Gkmv4QbiZCge5E68Of0IiU9/view?usp=sharing)|
+    |Mobilenet_v2 + Transparent Random Location|[Link]|
+    |Mobilenet_v2 + Color Random Location|[Link]|
+    |Mobilenet_v2 + Color + Transparent Random Location|[Link]|
+
+
 + **2. Train**     
+    
+`Argument`
+    
+
+
++ `Implement`    
     ~~~
     python train.py -g gpu_id -dir 'data_dir' -pretrained 'pretrained_model.pth'
     ~~~
@@ -244,10 +260,16 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     Train.sh 
     ~~~
 
-### Demo    
+## Demo    
  
 + **1. Download weight**        
 + **2. Demo**
     ~~~
     python demp.py --weightfile pretrained_model.pth -imgfile image_dir 
     ~~~
+
+## Reference 
+1. qubvel, [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch)
+2. Belval, [TextRecognitionDataGenerator](https://github.com/Belval/TextRecognitionDataGenerator)
+
+ 
