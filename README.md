@@ -19,6 +19,18 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 + Encoder : mobilenet_v2
 + Pretrained : imagenet
 
+`Inference time`
++ **Standard Image size** : 224 x 224 
++ **CPU**
+    + `mobilenet_V2` : 0.23343896865844727 sec
+    + `resnet34` : 0.31200408935546875 sec 
+    + `efficientnet-b0` : 0.32634687423706055 sec
++ **CUDA**   
+    + `mobilenet_V2` : sec
+    + `resnet34` : sec 
+    + `efficientnet-b0` :  sec
+
+**The comparison of the three ecoders showed similar performance. Therefore, we chose mobilenet_v2 with the fewest parameters and fastest inference time**
 
 + <details>
     <summary>Compare Encoder</summary>
@@ -172,7 +184,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     </div>
   </details>
 
-**The comparison of the three ecoders showed similar performance. Therefore, we chose mobilenet_v2 with the fewest parameters.**
+
 
 `Improvement Points`
 + Models perform poorly when finding undefined shapes of speech bubble.
@@ -192,10 +204,6 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 그림 추가 예정
 
 `Argument`
-+ **--simple** : Simply attach the speech bubble to a random location inside the cut.
-+ **--trans** : Attach the transparent speech bubble to a random location inside the cut.
-+ **--color** : Attach the color speech bubble to a random location inside the cut.
-+ **--trans_color** : Attach the color + transparent speech bubble to a random location inside the cut.
 
 
 
@@ -209,7 +217,7 @@ Therefore, masks of some speech bubble were created with edge detector and addit
  
  ![스크린샷 2021-03-05 오후 6 25 50](https://user-images.githubusercontent.com/61634628/110106579-31228880-7ded-11eb-8949-fc8d8cbfadb7.png)
  
- `augmentation` 
+ `Argument` 
  + Copy to Simple Random Location
  + Copy to Transparent Random Location
  + Copy to Color Random Location
@@ -247,18 +255,33 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 
 + **2. Train**     
     
-`Argument`
-    
+    + `Argument`
+        + **device option**
+            +  ```-g_num``` : gpu number to use cuda
+            +  ```-device``` : Whether the device to be used is cpu or cuda
+        + **data option**
+            + ```-train_dir``` : The parent folder of the image and mask that you use for training
+            + ```-valid_dir``` : The folder of the image and mask that you use for Validating
+        + **model option**
+            + ```-pretraied``` : pretrained model for the entire network
+            + ```-encoder``` : Encoder to use for network. Refer to [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch) for encoders.
+            + ```-encoder_weight``` : pretrained model for encoder 
+            + ```-activation``` :  activation function 
+        + **augmentation option** 
+            + ```-simple``` : Simply attach the speech bubble to a random location inside the cut.
+            + ```-trans``` : Attach the transparent speech bubble to a random location inside the cut.
+            + ```-color``` : Attach the color speech bubble to a random location inside the cut. 
+            + ```-trans_color``` : Attach the color + transparent speech bubble to a random location inside the cut.
 
 
-+ `Implement`    
-    ~~~
-    python train.py -g gpu_id -dir 'data_dir' -pretrained 'pretrained_model.pth'
-    ~~~
-    or
-    ~~~
-    Train.sh 
-    ~~~
+    + `Implement`     
+        ~~~
+        python train.py -g gpu_id -dir 'data_dir' -pretrained 'pretrained_model.pth'
+        ~~~
+        or
+        ~~~
+        Train.sh 
+        ~~~
 
 ## Demo    
  
@@ -267,6 +290,16 @@ Therefore, masks of some speech bubble were created with edge detector and addit
     ~~~
     python demp.py --weightfile pretrained_model.pth -imgfile image_dir 
     ~~~
+
+## Result 
+
+|Model|Image|
+|:---:|:---:|
+|MobileNet_v2|![train_model_mob7 pth](https://user-images.githubusercontent.com/61634628/110619106-c0a7ad00-81da-11eb-8dcb-bb11059311bd.png)|
+|MobileNet_v2 + gasi|![train_model_mob_gasi_7 pth](https://user-images.githubusercontent.com/61634628/110619068-b7b6db80-81da-11eb-8e6e-9b0b754511fc.png)|
+|MobileNet_v2 + trans|![train_model_mob_trans_4 pth](https://user-images.githubusercontent.com/61634628/110619099-be455300-81da-11eb-90d3-40aa3fd523bd.png)|
+
+
 
 ## Reference 
 1. qubvel, [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch)
