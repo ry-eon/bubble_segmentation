@@ -29,8 +29,8 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 Inference Images 
    + `size` : 224 x 224
    + `sheets` : 25   
-
-||mobilenet_V2|efficientnet-b0|resnet34|
+Compare Inference Time
+|Speed|mobilenet_V2|efficientnet-b0|resnet34|
 |----|----|----|---|
 |CPU|5.58838 sec|7.83775 sec|9.11186 sec|
 |CUDA|||
@@ -214,7 +214,7 @@ Inference Images
   
  ## Data Generation
  
- #### overview
+ #### Overview
  Use [trdg](https://github.com/Belval/TextRecognitionDataGenerator) to generate text data. In the case of trdg, when generating Korean image data, the data is generated one letter at a time. If you want to create a text image consisting of five Korean words, a total of five characters will be created, one by one. Therefore, I added the word in the Korean word dictionary as a txt file. Also, there is only one Korean font in trdg. Therefore, I added a font for Korean. The font is specified as random.
 
 ![스크린샷 2021-03-11 오전 2 08 06](https://user-images.githubusercontent.com/61634628/110668469-b0112a00-820e-11eb-88ed-13062326abd7.png)
@@ -317,7 +317,7 @@ Inference Images
 
 ## Data Augmentation 
  
-#### overview
+#### Overview
 Data augmentation consists of four categories: **Copy to Simple Random Location**, **Copy to Transparent Random Location**, **Copy to Color Random Location**,**Copy to Color + Transparent Random Location**. In case of **Copy to Simple Random Location**, copy the generated speech bubble to a random location inside the cut. In case of **Copy to Transparent Random Location**, make the generated speech bubble transparent and copy it to a random location inside the cut. In case of **Copy to Color Random Location**, color the generated speech bubble and copy it to a random location inside the cut. In case of **Copy to Color + Transparent Random Location**, color the generated speech bubble and make it transparent and copy it to a random location inside the cut. 
  <br><br>
  ![스크린샷 2021-03-05 오후 6 25 50](https://user-images.githubusercontent.com/61634628/110106579-31228880-7ded-11eb-8949-fc8d8cbfadb7.png)
