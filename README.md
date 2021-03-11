@@ -391,10 +391,15 @@ Data augmentation consists of four categories: **Copy to Simple Random Location*
 
 ## Future Works
 
+#### Overview
+The model has limitations on some speech bubbles.The biggest problem is not segmenting unusual shape of speech bubbles (hard cases). Next, the performance for transparent speech bubbles is low. If there are letters around the transparent speech bubble, the model may predict the letters as speech bubbles. In addition, if the speech bubble is too transparent, the model cannot predict the speech bubble, and if other elements are transparent within the cut, the model may predict it as speech bubble. Finally, when the letters in speech bubbles are distorted, the model fails to predict most of the time.
+
 #### Improvement Points
-+ Models perform poorly when finding undefined shapes of speech bubble.
-+ Models perform poorly when looking for high-transparency speech bubble.
-+ Models perform poorly when the internal letters of speech bubbles are distorted.
++ The model predicts unusual speech bubbles.
++ The model does not predict external characters with speech bubbles when speech bubbles are transparent.
++ The model predicts speech bubbles with high transparency.
++ The model does not predict transparent elements, not speech bubbles.
++ The model predicts speech bubbles with distorted internal letters.
 
 ## Reference 
 1. qubvel, [segmentation_models.pytorch](https://github.com/qubvel/segmentation_models.pytorch)
