@@ -29,7 +29,9 @@ Therefore, masks of some speech bubble were created with edge detector and addit
 Inference Images 
    + `size` : 224 x 224
    + `sheets` : 25   
+
 Compare Inference Time
+
 |Speed|mobilenet_V2|efficientnet-b0|resnet34|
 |----|----|----|---|
 |CPU|5.58838 sec|7.83775 sec|9.11186 sec|
