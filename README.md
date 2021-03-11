@@ -220,7 +220,7 @@ Inference Images
  ## Data Generation
  
  #### overview
- <br>Use [trdg](https://github.com/Belval/TextRecognitionDataGenerator) to generate text data. In the case of trdg, when generating Korean image data, the data is generated one letter at a time. If you want to create a text image consisting of five Korean words, a total of five characters will be created, one by one. Therefore, I added the word in the Korean word dictionary as a txt file. Also, there is only one Korean font in trdg. Therefore, I added a font for Korean. The font is specified as random.
+ Use [trdg](https://github.com/Belval/TextRecognitionDataGenerator) to generate text data. In the case of trdg, when generating Korean image data, the data is generated one letter at a time. If you want to create a text image consisting of five Korean words, a total of five characters will be created, one by one. Therefore, I added the word in the Korean word dictionary as a txt file. Also, there is only one Korean font in trdg. Therefore, I added a font for Korean. The font is specified as random.
 
 ![스크린샷 2021-03-11 오전 2 08 06](https://user-images.githubusercontent.com/61634628/110668469-b0112a00-820e-11eb-88ed-13062326abd7.png)
 
