@@ -228,19 +228,19 @@ Inference Images
 
 #### Arguments
 
-+ **Directory**
+
    + <details>
-       <summary>arguments</summary>
+       <summary>Directory</summary>
        <div markdown="1">
         
         + `--output_dir` : Specify the directory in which to store the generated data.<br>
         + `--input_file` : When set, this argument uses a specified text file as source for the text.
     
        </div> 
-    </details>
-+ **Text Generation** 
+     </details>
+
    + <details>
-       <summary>arguments</summary>
+       <summary>Text Generation</summary>
        <div markdown="1"> 
        
         + `--language` : The language to use, should be fr (French), en (English), es (Spanish), de (German), cn (Chinese), or hi (Hindi).
@@ -253,10 +253,10 @@ Inference Images
         + `-om` : Define if the generator will return masks for the text
        
        </div>
-    </details> 
-+ **Data Format**
-    + <details>
-       <summary>arguments</summary>
+     </details> 
+
+   + <details>
+       <summary>Data Format</summary>
        <div markdown="1"> 
     
         + `-w` : Define how many words should be included in each generated sample.
@@ -276,10 +276,10 @@ Inference Images
         + `-im` : Define the image mode to be used. RGB is default, L means 8-bit grayscale images, 1 means 1-bit binary images stored with one pixel per byte, etc.
        
        </div>
-      </details>
-+ **Text Augmentation**
-    + <details>
-       <summary>arguments</summary>
+     </details>
+
+   + <details>
+       <summary>Text Augmentation</summary>
        <div markdown="1"> 
     
         + `-k` : Define skewing angle of the generated text. In positive degrees.
@@ -293,9 +293,11 @@ Inference Images
         + `-tc` : Define the text's color, should be either a single hex color or a range in the ?,? format.
         + `-id` : Define an image directory to use when background is set to image.
         + `-stf` : Define the color of the contour of the strokes, if stroke_width is bigger than.
-+ **Mask Generation**
-    + <details>
-       <summary>arguments</summary>
+       </div>
+     </details>
+    
+   + <details>
+       <summary>Mask Generation</summary>
        <div markdown="1"> 
     
         + `-save_dir` : Specify the directory in which to store the mask image.
@@ -304,7 +306,7 @@ Inference Images
         + `-mw` : Define the width of the mask image.
         + `-mh` : Define the height of the mask image.
        </div>
-      </details>
+     </details>
 
 #### Implement
 + Use the above argument to generate the data you want.
