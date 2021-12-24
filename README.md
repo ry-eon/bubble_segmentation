@@ -1,5 +1,4 @@
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nicolalandro/
-bubble_segmentation /blob/master/BaloonSegmentaton.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nicolalandro/bubble_segmentation /blob/master/BaloonSegmentaton.ipynb)
 
 # Bubble Segmentation
 
